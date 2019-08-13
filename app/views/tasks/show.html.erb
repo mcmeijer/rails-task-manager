@@ -1,0 +1,15 @@
+<h1><%= @task.title %></h1>
+<p><%= @task.details %></p>
+<% if @task.completed? %>
+  <p>This task is completed ✅</p>
+<% else %>
+  <p>This task is not completed yet ⬜️ </p>
+<% end  %>
+
+<p><%= link_to 'Back to list', tasks_path %></p>
+<p><%= link_to '💫 Update a task', edit_path %></p>
+<p><%= link_to "🗑 Delete #{@task.title}", destroy_path(@task), method: :delete, data: { confirm: "Are you sure?"} %></p>
+
+
+
+
